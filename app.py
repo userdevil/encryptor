@@ -53,3 +53,6 @@ def decode():
         message = message_bytes.decode('ascii')
         return render_template('index.html',msg2 = message)
     
+@app.errorhandler(404)
+def not_found(e):
+  return render_template('custom_page.html'), 404
